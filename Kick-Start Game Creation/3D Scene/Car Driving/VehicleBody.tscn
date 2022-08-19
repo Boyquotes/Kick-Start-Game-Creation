@@ -1,0 +1,76 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://3D Scene/Car Driving/Script/CarScript.gd" type="Script" id=1]
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="BoxShape" id=2]
+
+[sub_resource type="CylinderMesh" id=3]
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[node name="VehicleBody" type="VehicleBody"]
+mass = 60.0
+script = ExtResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.65534, 0 )
+mesh = SubResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.65534, 0 )
+shape = SubResource( 2 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -10, 2.5688, 0 )
+current = true
+
+[node name="VehicleWheel" type="VehicleWheel" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2, -1, -1 )
+use_as_traction = true
+wheel_radius = 1.0
+suspension_stiffness = 20.0
+damping_compression = 1.0
+
+[node name="MeshInstance" type="MeshInstance" parent="VehicleWheel"]
+transform = Transform( -4.37114e-08, -0.4, 4.37114e-08, 0, -1.74846e-08, -1, 1, -1.74846e-08, 1.91069e-15, 0, 0, 0 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
+
+[node name="VehicleWheel2" type="VehicleWheel" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2, -1, 1 )
+use_as_traction = true
+wheel_radius = 1.0
+suspension_stiffness = 20.0
+damping_compression = 1.0
+
+[node name="MeshInstance" type="MeshInstance" parent="VehicleWheel2"]
+transform = Transform( -4.37114e-08, -0.4, 4.37114e-08, 0, -1.74846e-08, -1, 1, -1.74846e-08, 1.91069e-15, 0, 0, 0 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
+
+[node name="VehicleWheel3" type="VehicleWheel" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2, -1, -1 )
+use_as_steering = true
+wheel_radius = 1.0
+suspension_stiffness = 20.0
+damping_compression = 1.0
+
+[node name="MeshInstance" type="MeshInstance" parent="VehicleWheel3"]
+transform = Transform( -4.37114e-08, -0.4, 4.37114e-08, 0, -1.74846e-08, -1, 1, -1.74846e-08, 1.91069e-15, 0, 0, 0 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
+
+[node name="VehicleWheel4" type="VehicleWheel" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2, -1, 1 )
+use_as_steering = true
+wheel_radius = 1.0
+suspension_stiffness = 20.0
+damping_compression = 1.0
+
+[node name="MeshInstance" type="MeshInstance" parent="VehicleWheel4"]
+transform = Transform( -4.37114e-08, -0.4, 4.37114e-08, 0, -1.74846e-08, -1, 1, -1.74846e-08, 1.91069e-15, 0, 0, 0 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )

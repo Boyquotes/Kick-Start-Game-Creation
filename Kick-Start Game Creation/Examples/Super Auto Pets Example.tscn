@@ -1,0 +1,140 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://2D Scene/Super Auto Pets/Script/Super Pets Script.gd" type="Script" id=1]
+[ext_resource path="res://2D Scene/Super Auto Pets/Item.tscn" type="PackedScene" id=2]
+[ext_resource path="res://2D Scene/Super Auto Pets/AttackItem.tscn" type="PackedScene" id=3]
+
+[node name="Super Auto Pets Example" type="Node2D"]
+script = ExtResource( 1 )
+PetSlots = [ NodePath("Base/PetSlot1"), NodePath("Base/PetSlot2"), NodePath("Base/PetSlot3"), NodePath("Base/PetSlot4"), NodePath("Base/PetSlot5") ]
+ShopSlots = [ NodePath("Base/ShopSlot1"), NodePath("Base/ShopSlot2"), NodePath("Base/ShopSlot3"), NodePath("Base/ShopSlot4") ]
+BuffSlots = [ NodePath("Base/BuffSlot1"), NodePath("Base/BuffSlot2") ]
+AttackSlots = [ NodePath("Attack/AttackSlot1"), NodePath("Attack/AttackSlot2"), NodePath("Attack/AttackSlot3"), NodePath("Attack/AttackSlot4"), NodePath("Attack/AttackSlot5") ]
+EnemySlots = [ NodePath("Attack/EnemySlot1"), NodePath("Attack/EnemySlot2"), NodePath("Attack/EnemySlot3"), NodePath("Attack/EnemySlot4"), NodePath("Attack/EnemySlot5") ]
+BasePath = NodePath("Base")
+AttackPath = NodePath("Attack")
+
+[node name="Base" type="Node2D" parent="."]
+
+[node name="PetSlot1" parent="Base" instance=ExtResource( 2 )]
+position = Vector2( 400, 100 )
+PetSlot = true
+GoToScript = NodePath("../..")
+
+[node name="PetSlot2" parent="Base" instance=ExtResource( 2 )]
+position = Vector2( 325, 100 )
+PetSlot = true
+GoToScript = NodePath("../..")
+
+[node name="PetSlot3" parent="Base" instance=ExtResource( 2 )]
+position = Vector2( 250, 100 )
+PetSlot = true
+GoToScript = NodePath("../..")
+
+[node name="PetSlot4" parent="Base" instance=ExtResource( 2 )]
+position = Vector2( 175, 100 )
+PetSlot = true
+GoToScript = NodePath("../..")
+
+[node name="PetSlot5" parent="Base" instance=ExtResource( 2 )]
+position = Vector2( 100, 100 )
+PetSlot = true
+GoToScript = NodePath("../..")
+
+[node name="ShopSlot1" parent="Base" instance=ExtResource( 2 )]
+position = Vector2( 300, 500 )
+ShopSlot = true
+GoToScript = NodePath("../..")
+
+[node name="ShopSlot2" parent="Base" instance=ExtResource( 2 )]
+position = Vector2( 225, 500 )
+ShopSlot = true
+GoToScript = NodePath("../..")
+
+[node name="ShopSlot3" parent="Base" instance=ExtResource( 2 )]
+position = Vector2( 150, 500 )
+ShopSlot = true
+GoToScript = NodePath("../..")
+
+[node name="ShopSlot4" parent="Base" instance=ExtResource( 2 )]
+position = Vector2( 75, 500 )
+ShopSlot = true
+GoToScript = NodePath("../..")
+
+[node name="BuffSlot1" parent="Base" instance=ExtResource( 2 )]
+position = Vector2( 700, 500 )
+BuffSlot = true
+GoToScript = NodePath("../..")
+
+[node name="BuffSlot2" parent="Base" instance=ExtResource( 2 )]
+position = Vector2( 625, 500 )
+BuffSlot = true
+GoToScript = NodePath("../..")
+
+[node name="Button" type="Button" parent="Base"]
+margin_left = 392.0
+margin_top = 482.0
+margin_right = 494.0
+margin_bottom = 502.0
+text = "Refresh Items"
+
+[node name="Button2" type="Button" parent="Base"]
+margin_left = 808.0
+margin_top = 474.0
+margin_right = 910.0
+margin_bottom = 494.0
+text = "Attack!"
+
+[node name="Attack" type="Node2D" parent="."]
+visible = false
+
+[node name="AttackSlot1" parent="Attack" instance=ExtResource( 3 )]
+position = Vector2( 379, 458 )
+GoToScript = NodePath("../..")
+
+[node name="AttackSlot2" parent="Attack" instance=ExtResource( 3 )]
+position = Vector2( 304, 435 )
+GoToScript = NodePath("../..")
+
+[node name="AttackSlot3" parent="Attack" instance=ExtResource( 3 )]
+position = Vector2( 231, 490 )
+GoToScript = NodePath("../..")
+
+[node name="AttackSlot4" parent="Attack" instance=ExtResource( 3 )]
+position = Vector2( 180, 458 )
+GoToScript = NodePath("../..")
+
+[node name="AttackSlot5" parent="Attack" instance=ExtResource( 3 )]
+position = Vector2( 115, 419 )
+GoToScript = NodePath("../..")
+
+[node name="EnemySlot1" parent="Attack" instance=ExtResource( 3 )]
+position = Vector2( 576, 466 )
+GoToScript = NodePath("../..")
+
+[node name="EnemySlot2" parent="Attack" instance=ExtResource( 3 )]
+position = Vector2( 660, 427 )
+GoToScript = NodePath("../..")
+
+[node name="EnemySlot3" parent="Attack" instance=ExtResource( 3 )]
+position = Vector2( 738, 466 )
+GoToScript = NodePath("../..")
+
+[node name="EnemySlot4" parent="Attack" instance=ExtResource( 3 )]
+position = Vector2( 810, 501 )
+GoToScript = NodePath("../..")
+
+[node name="EnemySlot5" parent="Attack" instance=ExtResource( 3 )]
+position = Vector2( 877, 450 )
+GoToScript = NodePath("../..")
+
+[node name="Murder" type="Button" parent="Attack"]
+margin_left = 367.0
+margin_top = 212.0
+margin_right = 379.0
+margin_bottom = 232.0
+text = "Attack That A**hole!"
+
+[connection signal="pressed" from="Base/Button" to="." method="RandomizeShop"]
+[connection signal="pressed" from="Base/Button2" to="." method="Attack"]
+[connection signal="pressed" from="Attack/Murder" to="." method="Murder"]

@@ -15,6 +15,12 @@ margin_right = 325.0
 margin_bottom = 325.0
 text = "Cookie"
 
+[node name="Button" parent="." instance=ExtResource( 2 )]
+margin_left = 825.0
+margin_top = 25.0
+margin_right = 975.0
+margin_bottom = 90.0
+
 [node name="TextItem" type="RichTextLabel" parent="."]
 margin_left = 26.0
 margin_top = 325.0
@@ -22,12 +28,6 @@ margin_right = 326.0
 margin_bottom = 365.0
 text = "Example
 Example"
-
-[node name="Button" parent="." instance=ExtResource( 2 )]
-margin_left = 825.0
-margin_top = 25.0
-margin_right = 975.0
-margin_bottom = 90.0
 
 [node name="ClickProgressBar" type="ProgressBar" parent="."]
 margin_left = 25.0

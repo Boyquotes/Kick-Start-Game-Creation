@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://3D Scene/Car Driving/VehicleBody.tscn" type="PackedScene" id=1]
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="BoxShape" id=2]
+
+[node name="Car Driving Example" type="Spatial"]
+
+[node name="StaticBody" type="StaticBody" parent="."]
+transform = Transform( 50, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="StaticBody"]
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+shape = SubResource( 2 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 0.467842, 0.283915, -0.836968, 0.248254, 0.866657, 0.432753, 0.84823, -0.410241, 0.334976, 0.486008, 7.1612, 0 )
+
+[node name="VehicleBody" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.55876, 6.92118, 8.50557 )
+mass = 40.0

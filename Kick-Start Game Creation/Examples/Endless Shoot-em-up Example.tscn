@@ -1,9 +1,16 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://2D Scene/Endless Shoot-em-up/Ship.tscn" type="PackedScene" id=1]
+[ext_resource path="res://2D Scene/Endless Shoot-em-up/Script/EnemySpawner.gd" type="Script" id=2]
+[ext_resource path="res://2D Scene/Endless Shoot-em-up/Enemy.tscn" type="PackedScene" id=3]
 
 [node name="Endless Shoot-em-up Example" type="Node2D"]
 position = Vector2( -1, 0 )
 
-[node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
-position = Vector2( 516, 319 )
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 545, 243 )
+
+[node name="EnemySpawner" type="Node2D" parent="."]
+position = Vector2( 500, 0 )
+script = ExtResource( 2 )
+Enemy = ExtResource( 3 )

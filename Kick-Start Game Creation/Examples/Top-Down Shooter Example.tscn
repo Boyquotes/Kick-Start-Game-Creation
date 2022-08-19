@@ -4,5 +4,5 @@
 
 [node name="Top-Down Shooter Example" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 441, 241 )
+[node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 392, 243 )
