@@ -49,16 +49,19 @@ func _physics_process(_delta):
 	Velocity = Velocity.rotated(Vector3.UP, self.global_transform.basis.get_euler().y)
 	
 	if Input.get_action_strength("Right") == 1 or Input.get_action_strength("Left") == 1 or Input.get_action_strength("Down") == 1 or Input.get_action_strength("Up") == 1:
-		Animator.play("Walk")
-		Animator.playback_speed = 1
+		if weakref(Animator).get_ref() != null:
+			Animator.play("Walk")
+			Animator.playback_speed = 1
 	else:
-		Animator.play("Idle")
-		Animator.playback_speed = 1
+		if weakref(Animator).get_ref() != null:
+			Animator.play("Idle")
+			Animator.playback_speed = 1
 	# Basically walk but run when that happens.
 	Velocity = Vector3(Velocity.x * Speed, Velocity.y, Velocity.z * Speed)
 	if Input.get_action_strength("Run"):
 		Velocity = Vector3(Velocity.x * RunMultiplier, Velocity.y, Velocity.z * RunMultiplier)
-		Animator.playback_speed = 2
+		if weakref(Animator).get_ref() != null:
+			Animator.playback_speed = 2
 	
 	#Jumping
 	if Input.is_action_just_pressed("Jump3D") and is_on_floor():
@@ -74,9 +77,10 @@ func _physics_process(_delta):
 	Velocity.y -= Gravity
 	
 	Velocity = move_and_slide(Velocity, Vector3.UP)
+	Velocity = move_and_slide(Velocity, Vector3.UP)
 
 func Die():
-	Animator.stop()
+	Animator.queue_free()
 	get_node("Visual").queue_free()
 	Speed = 0
 	get_node("CPUParticles").emitting = true

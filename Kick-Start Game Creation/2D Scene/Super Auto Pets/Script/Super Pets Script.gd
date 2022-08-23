@@ -1,12 +1,12 @@
 extends Node2D
 
-export(Array) var PetSlots = []
-export(Array) var ShopSlots = []
-export(Array) var BuffSlots = []
+export(Array, NodePath) var PetSlots = []
+export(Array, NodePath) var ShopSlots = []
+export(Array, NodePath) var BuffSlots = []
 export(int) var TexturesAmount = 3
 
-export(Array) var AttackSlots = []
-export(Array) var EnemySlots = []
+export(Array, NodePath) var AttackSlots = []
+export(Array, NodePath) var EnemySlots = []
 
 export(NodePath) var BasePath
 export(NodePath) var AttackPath
@@ -115,6 +115,7 @@ func Murder():
 						EnemySlots[x].ItemAssigned = false
 					if AttackSlots[n].Health <= 0:
 						AttackSlots[n].ItemAssigned = false
+					# function dedicated to checking for death
 					CheckDead()
 					return
 					

@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://2D Scene/Side Scroller/Player.tscn" type="PackedScene" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 210, 65 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 210.5, 7 )
+
+[node name="Side Scroller Example" type="Node2D"]
+
+[node name="Wall" type="StaticBody2D" parent="."]
+
+[node name="Wall" type="ColorRect" parent="Wall"]
+margin_left = 281.0
+margin_top = 335.0
+margin_right = 698.0
+margin_bottom = 461.0
+color = Color( 0.878431, 0.878431, 0.878431, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+position = Vector2( 490, 395 )
+shape = SubResource( 1 )
+
+[node name="Floor" type="StaticBody2D" parent="."]
+
+[node name="Floor" type="ColorRect" parent="Floor"]
+margin_left = 281.0
+margin_top = 460.0
+margin_right = 698.0
+margin_bottom = 541.0
+color = Color( 0.54902, 0.54902, 0.54902, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2( 489.5, 538 )
+shape = SubResource( 2 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 377, 444 )

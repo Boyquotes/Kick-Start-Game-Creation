@@ -7,16 +7,35 @@
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 2 )
+PercentWin = 25.0
+SlotMachines = [ NodePath("Slot Machine Scene"), NodePath("Slot Machine Scene2"), NodePath("Slot Machine Scene3") ]
 
 [node name="Slot Machine Scene" parent="." instance=ExtResource( 1 )]
-margin_top = -2.0
-margin_bottom = -2.0
+margin_left = 349.0
+margin_top = 400.0
+margin_right = 349.0
+margin_bottom = 400.0
+TimeItTakesToSpin = 2
 
-[node name="Button" type="Button" parent="."]
-margin_left = 202.0
-margin_top = 461.0
-margin_right = 245.0
-margin_bottom = 481.0
+[node name="Slot Machine Scene2" parent="." instance=ExtResource( 1 )]
+visible = false
+margin_left = 349.0
+margin_top = 200.0
+margin_right = 349.0
+margin_bottom = 200.0
+
+[node name="Slot Machine Scene3" parent="." instance=ExtResource( 1 )]
+visible = false
+margin_left = 349.0
+margin_right = 349.0
+margin_bottom = -1.52588e-05
+TimeItTakesToSpin = 7
+
+[node name="Spinner" type="Button" parent="."]
+margin_left = 132.0
+margin_top = 240.0
+margin_right = 175.0
+margin_bottom = 260.0
 text = "Spin!"
 
-[connection signal="pressed" from="Button" to="Slot Machine Scene" method="Spinner_Button_Pressed"]
+[connection signal="pressed" from="Spinner" to="." method="_on_Spinner_pressed"]

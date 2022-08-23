@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://1D User Interface/Computer Role-Playing Game/Script/Enemy.gd" type="Script" id=1]
+[ext_resource path="res://1D User Interface/Computer Role-Playing Game/Textures/FullHealth.png" type="Texture" id=2]
+[ext_resource path="res://1D User Interface/Computer Role-Playing Game/Textures/HalfHealth.png" type="Texture" id=3]
+
+[node name="Enemy" type="Sprite"]
+texture = ExtResource( 2 )
+script = ExtResource( 1 )
+FullHealth = ExtResource( 2 )
+HalfHealth = ExtResource( 3 )

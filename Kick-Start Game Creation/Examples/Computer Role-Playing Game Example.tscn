@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://1D User Interface/Computer Role-Playing Game/Script/Computer Fun.gd" type="Script" id=1]
+[ext_resource path="res://1D User Interface/Computer Role-Playing Game/Enemy.tscn" type="PackedScene" id=2]
 
 [node name="Computer Role-Playing Game Example" type="Control"]
 anchor_right = 1.0
@@ -16,6 +17,55 @@ Body = 10
 Charisma = 10
 Intelligence = 10
 Willpower = 10
+Enemy = NodePath("Enemy")
+
+[node name="StatsButtons" type="Control" parent="."]
+margin_left = 2.0
+margin_top = 104.0
+margin_right = 152.0
+margin_bottom = 144.0
+
+[node name="SkillText" type="RichTextLabel" parent="StatsButtons"]
+margin_right = 150.0
+margin_bottom = 20.0
+hint_tooltip = "To increase this number, just kill some enemies!"
+text = "Spendable Points:"
+
+[node name="Strength" type="Button" parent="StatsButtons"]
+margin_top = 20.0
+margin_right = 150.0
+margin_bottom = 40.0
+text = "Increase Strength"
+
+[node name="Agility" type="Button" parent="StatsButtons"]
+margin_top = 40.0
+margin_right = 150.0
+margin_bottom = 60.0
+text = "Increase Agility"
+
+[node name="Body" type="Button" parent="StatsButtons"]
+margin_top = 60.0
+margin_right = 150.0
+margin_bottom = 80.0
+text = "Increase Body"
+
+[node name="Charisma" type="Button" parent="StatsButtons"]
+margin_top = 80.0
+margin_right = 150.0
+margin_bottom = 100.0
+text = "Increase Charisma"
+
+[node name="Intelligence" type="Button" parent="StatsButtons"]
+margin_top = 100.0
+margin_right = 150.0
+margin_bottom = 120.0
+text = "Increase Intelligence"
+
+[node name="Willpower" type="Button" parent="StatsButtons"]
+margin_top = 120.0
+margin_right = 150.0
+margin_bottom = 140.0
+text = "Increase Willpower"
 
 [node name="Check Stats" type="Button" parent="."]
 margin_left = 51.0
@@ -45,6 +95,26 @@ margin_right = 516.0
 margin_bottom = 84.0
 text = "Chat"
 
+[node name="Box" type="ColorRect" parent="."]
+margin_left = 2.0
+margin_top = 501.0
+margin_right = 1002.0
+margin_bottom = 601.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Console" type="RichTextLabel" parent="Box"]
+margin_right = 1000.0
+margin_bottom = 100.0
+
+[node name="Enemy" parent="." instance=ExtResource( 2 )]
+position = Vector2( 488, 273 )
+
+[connection signal="pressed" from="StatsButtons/Strength" to="." method="_on_Strength_pressed"]
+[connection signal="pressed" from="StatsButtons/Agility" to="." method="_on_Agility_pressed"]
+[connection signal="pressed" from="StatsButtons/Body" to="." method="_on_Body_pressed"]
+[connection signal="pressed" from="StatsButtons/Charisma" to="." method="_on_Charisma_pressed"]
+[connection signal="pressed" from="StatsButtons/Intelligence" to="." method="_on_Intelligence_pressed"]
+[connection signal="pressed" from="StatsButtons/Willpower" to="." method="_on_Willpower_pressed"]
 [connection signal="pressed" from="Check Stats" to="." method="Checking_Stats"]
 [connection signal="pressed" from="Find Enemy" to="." method="Find_Enemy"]
 [connection signal="pressed" from="Attack" to="." method="Attack"]

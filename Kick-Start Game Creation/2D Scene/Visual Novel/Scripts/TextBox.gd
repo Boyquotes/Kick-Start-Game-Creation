@@ -1,9 +1,9 @@
 extends ColorRect
 
-export var TextPieces = ["test"]
+export(PoolStringArray) var TextPieces = ["test"]
 var TextChainNumber = 0
 
-export var TextChoices = ["Test 1", "Test 2"]
+export(PoolStringArray) var TextChoices = ["Test 1", "Test 2"]
 var AnswerChainNumber = 0
 var Answering = false
 
