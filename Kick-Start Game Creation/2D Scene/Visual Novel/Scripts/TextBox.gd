@@ -11,7 +11,9 @@ export onready var Answer1 = get_parent().get_node("Buttons/Answer1")
 export onready var Answer2 = get_parent().get_node("Buttons/Answer2")
 # This is whomever is speaking, 1 is left, 2 is right, 3 is player
 export var PersonSpeaking = [1]
-export var PersonEmotion = ["Adoration"]
+export(Array, String, "Admiration", "Adoration", "Aesthetic Appreciation", "Amusement", "Anger", "Anxiety", "Awe", "Awkwardness",
+"Boredom", "Calmness", "Confusion", "Craving", "Disgust", "Empathic Pain", "Entrancement", "Excitement", "Fear", "Horror",
+"Interest", "Joy", "Nostalgia", "Relief", "Romance", "Sadness", "Satisfaction", "Sexual Desire", "Surprise") var PersonEmotion
 
 export onready var Person1 = get_parent().get_node("Character")
 export onready var Person2 = get_parent().get_node("Character2")

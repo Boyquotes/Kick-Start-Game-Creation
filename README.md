@@ -29,3 +29,8 @@ This is the place to store heavy files so I don't bloat this project. Link: http
 Project Size: 236 MB
 
 Includes: Easy Video Player
+
+# Other Projects
+Yup, some stuff I haven't merged onto this project yet, so here is some others you would get a kick out off.
+
+Payday Project: https://github.com/MasterKitten/Payday-Project

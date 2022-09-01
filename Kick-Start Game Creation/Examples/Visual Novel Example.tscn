@@ -25,9 +25,9 @@ margin_left = 125.0
 margin_top = 450.0
 margin_right = 875.0
 margin_bottom = 600.0
-TextPieces = [ "Nice weather we are having today", "Yes, indeed", "Boom", "Boom", "Sorry bout that", "No problem", "What are you doing?", "Interesting" ]
+TextPieces = PoolStringArray( "boop", "boop", "change", "change", "back", "back", "Question\?", "Cool" )
 PersonSpeaking = [ 1, 2, 1, 2, 1, 2, 3, 1 ]
-PersonEmotion = [ "Adoration", "Adoration", "Admiration", "Admiration", "Adoration", "Adoration", "0", "0" ]
+PersonEmotion = [ "Adoration", "Adoration", "Admiration", "Admiration", "Adoration", "Adoration", "Adoration", "Adoration" ]
 
 [node name="Buttons" type="Node" parent="."]
 
