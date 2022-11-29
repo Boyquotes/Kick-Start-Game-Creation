@@ -22,15 +22,6 @@ Go to the Wiki on this GitHub to figure out how to use it! (it shouldn't be too 
 
 Want to look at progress (or even ideas)? Check it: https://trello.com/b/88QC8mg6
 
-# Large-Size-Game-Creation
+# With the introduction of Godot 4.0, this project is archived.
 
-This is the place to store heavy files so I don't bloat this project. Link: https://github.com/MasterKitten/Large-Size-Game-Creation
-
-Project Size: 236 MB
-
-Includes: Easy Video Player
-
-# Other Projects
-Yup, some stuff I haven't merged onto this project yet, so here is some others you would get a kick out off.
-
-Payday Project: https://github.com/MasterKitten/Payday-Project
+If you want, you can still use this.
